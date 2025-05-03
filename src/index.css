@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Primary';
+  src: url('./fonts/manrope-medium.woff2') format('woff2'),
+    url('./fonts/manrope-medium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --primary: #ededed;
+  --secondary: #212121;
+  --alternate: #91bcc3;
+}
+
+html {
+  font-size: calc(100vw / 1920 * 10);
+}
+
+body {
+  font-family: 'Primary';
+  background-color: var(--alternate);
+  color: var(--secondary);
+}
+
+h1 {
+  font-size: 16rem;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 3.2rem;
+  margin-bottom: 0.8rem;
+}
+
+a,
+p,
+span {
+  display: block;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+.draggable {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.draggable_title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.draggable_item {
+  position: absolute;
+  width: 32rem;
+  height: fit-content;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  background-color: var(--secondary);
+  color: var(--primary);
+  border-radius: 2rem;
+  overflow: hidden;
+}
+
+.draggable_item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.draggable_item.--text {
+  width: 40rem;
+  padding: 3.2rem;
+}
+
+.draggable_item.--circle {
+  width: 32rem;
+  height: 32rem;
+  border-radius: 50rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.6rem;
+  padding: 3.2rem;
+  background-color: orangered;
+  text-align: center;
+}
